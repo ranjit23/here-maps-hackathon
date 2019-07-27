@@ -29,6 +29,7 @@ require("./config/passport.js")(passport);
 //ROUTES
 app.use("/api/users", users);
 app.use("/api/transport", transport);
+app.use("/api/customer", customer);
 
 const port = process.env.PORT || 5000;
 

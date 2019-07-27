@@ -7,6 +7,7 @@ const passport = require("passport");
 
 const Transport = require("../../models/Transport");
 const User = require("../../models/User");
+const Customer = require("../../models/Customer");
 
 router.get("/test", (req, res) => res.json({ msg: "transport works work" }));
 
