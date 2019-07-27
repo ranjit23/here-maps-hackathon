@@ -17,7 +17,7 @@ const CustomerSchema = new Schema({
     required: true
   },
   type_of_good: {
-    type: Number,
+    type: String,
     required: true
   },
   volume_length: {

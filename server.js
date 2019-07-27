@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const users = require("./routes/api/users");
 const transport = require("./routes/api/transport");
+const customer = require("./routes/api/customer");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 

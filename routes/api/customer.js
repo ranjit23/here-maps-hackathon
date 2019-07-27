@@ -40,25 +40,20 @@ router.post(
   (req, res) => {
     const customerFields = {};
     customerFields.user = req.user.id;
-    if (req.body.company_name)
-      customerFields.company_name = req.body.company_name;
-    if (req.body.company_contact)
-      customerFields.company_contact = req.body.company_contact;
-    if (req.body.no_of_vehicle)
-      customerFields.no_of_vehicle = req.body.no_of_vehicle;
+    if (req.body.customer_name)
+      customerFields.customer_name = req.body.customer_name;
+    if (req.body.customer_contact_no)
+      customerFields.customer_contact_no = req.body.customer_contact_no;
+    if (req.body.type_of_good)
+      customerFields.type_of_good = req.body.type_of_good;
     if (req.body.volume_length)
       customerFields.volume_length = req.body.volume_length;
     if (req.body.volume_breadth)
       customerFields.volume_breadth = req.body.volume_breadth;
     if (req.body.volume_height)
       customerFields.volume_height = req.body.volume_height;
-    if (req.body.departure_date)
-      customerFields.departure_date = req.body.departure_date;
-    if (req.body.departure_time)
-      customerFields.departure_time = req.body.departure_time;
     if (req.body.route_a) customerFields.route_a = req.body.route_a;
     if (req.body.route_b) customerFields.route_b = req.body.route_b;
-    if (req.body.vehicle_no) customerFields.vehicle_no = req.body.vehicle_no;
 
     Customer.findOne({ user: req.user.id }).then(customer => {
       if (customer) {
@@ -73,10 +68,10 @@ router.post(
 
         //CHECK IF HANDLE EXIST
 
-        Customer.findOne({ company_name: customerFields.company_name }).then(
+        Customer.findOne({ customer_name: customerFields.customer_name }).then(
           customer => {
             if (customer) {
-              errors.company_name = "The company name already exists";
+              errors.customer_name = "The company name already exists";
               res.status(400).json(errors);
             }
 
